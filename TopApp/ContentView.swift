@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("uid") var userID  = ""
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        if userID == ""{
+            LogInView()
+        }else{
+            HomeView()
         }
-        .padding()
     }
 }
 
